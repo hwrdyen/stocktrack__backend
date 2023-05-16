@@ -1,0 +1,35 @@
+[
+  {
+    "id": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "buyin_date": "06/05",
+    "stock_id": "ABC", 
+    "stock_name": "台電電",
+    "price_per_stock": 120,
+    "today_pointprice": 150,
+    "today_supportprice": 100,
+    "buyin_reason": "因為動能大",
+    "stoploss_price": 100
+  },
+  {
+    "id": "5bf7bd6c-2b16-4129-bddc-9d37ff8539e9",
+    "buyin_date": "06/05",
+    "stock_id": "ABCD", 
+    "stock_name": "電電",
+    "price_per_stock": 120,
+    "today_pointprice": 150,
+    "today_supportprice": 100,
+    "buyin_reason": "因為動能大",
+    "stoploss_price": 100
+  },
+  {
+    "id": "90ac3319-70d1-4a51-b91d-ba6c2464408c",
+    "buyin_date": "06/05",
+    "stock_id": "ABCDE", 
+    "stock_name": "電",
+    "price_per_stock": 120,
+    "today_pointprice": 150,
+    "today_supportprice": 100,
+    "buyin_reason": "因為動能大",
+    "stoploss_price": 100
+  }
+]
