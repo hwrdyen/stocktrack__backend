@@ -52,5 +52,34 @@ router.delete("/allbuyindata/:buyinID", (req, res) => {
         .json(stringify_buyin_data_data);
 });
 
+//Function to read BuyInData.json
+function readBuyInData() {
+    const buyindataFile = fs.readFileSync("data/BuyInData.json");
+    const buyinData = JSON.parse(buyindataFile);
+    return buyinData;
+}
+
+// PUT /allbuyindata/:buyinID
+router.put("/allbuyindata/:buyinID", (req, res) => {
+    const buyinID = req.params.buyinID;
+    const parseAllBuyInData = readBuyInData();
+    //find index of Warehouse we want to edit
+    let currentBuyInDataIndex = parseAllBuyInData.findIndex(
+        (buyindata) => buyindata.id === buyinID
+    );
+    if (currentBuyInDataIndex !== -1) {
+        //edit_data
+        let newData = req.body;
+        parseAllBuyInData[currentBuyInDataIndex] = newData;
+        let stringifyAllBuyInData = JSON.stringify(parseAllBuyInData);
+        fs.writeFileSync("data/BuyInData.json", stringifyAllBuyInData);
+        res.status(200).json({
+            message: `Edited ${req.body.name} Successfully!`,
+        });
+    } else {
+        res.status(404).json({ message: "Buy-In Data not found." });
+    }
+});
+
 //exports the route to be used (similar to a component in react) on the server js index.js
 module.exports = router;
